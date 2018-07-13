@@ -1,0 +1,2 @@
+transform.LookAt(gameobject.transform)    使游戏对象z轴指向目标物体的中心
+Quaternion.LookRotation(new Vector3(1,1,1));    获取一个向量所表示的方向（将一个向量转为该向量所对应的方向）；
