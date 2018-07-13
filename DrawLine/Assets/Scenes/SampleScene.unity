@@ -633,7 +633,6 @@ GameObject:
   - component: {fileID: 2064148713}
   - component: {fileID: 2064148712}
   - component: {fileID: 2064148711}
-  - component: {fileID: 2064148709}
   - component: {fileID: 2064148710}
   m_Layer: 0
   m_Name: Cube2
@@ -642,21 +641,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &2064148709
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2064148708}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &2064148710
 MonoBehaviour:
   m_ObjectHideFlags: 0
