@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 /*
  *物体移动到鼠标点击位置
 */
 
-public class PlayerMove : MonoBehaviour
+public class RigidBody_PlayerMove : MonoBehaviour
 {
     public float speed = 5;
     public Rigidbody mRigidbody;
