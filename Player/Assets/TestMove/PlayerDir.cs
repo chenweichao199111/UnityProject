@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerDir : MonoBehaviour
 {
     public GameObject effect;
-    private bool isMoving = false; //鼠标左键状态
     public Vector3 targetPosition;
 
     void Awake()
@@ -31,26 +30,6 @@ public class PlayerDir : MonoBehaviour
             {
                 //参数为目标物体的位置信息
                 ShowClickEffect(hitInfo.point);
-                isMoving = true;
-                LookAtTarget(hitInfo.point);
-            }
-        }
-
-        //判断鼠标左键是否抬起
-        if (Input.GetMouseButtonUp(0))
-        {
-            isMoving = false;
-        }
-
-        if (isMoving)
-        {
-            //获取由主摄像机位置到鼠标点击位置的一条射线
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
-            bool isCollider = Physics.Raycast(ray, out hitInfo);
-            //判断射线是否成功发射且是否触发目标物体
-            if (isCollider && hitInfo.collider.CompareTag("Ground"))
-            {
                 LookAtTarget(hitInfo.point);
             }
         }
