@@ -1,0 +1,12 @@
+{
+  "infoList": [
+    {
+      "panelTypeString": "ZsCLJX_Dialog",
+      "path": "ZsCLJX/UI/Prefabs/Dialog"
+    },
+    {
+      "panelTypeString": "ZsCLJX_Login",
+      "path": "ZsCLJX/UI/Prefabs/Login"
+    }
+  ]
+}
