@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Framework
+namespace Framework.Unity
 {
     [System.Serializable]
     public struct Point
