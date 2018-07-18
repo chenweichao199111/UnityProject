@@ -229,6 +229,7 @@ public class HighlightingEffect : MonoBehaviour
 			return;
 		}
 		
+        /*
 		// Disable if Render Textures is not supported
 		if (!SystemInfo.supportsRenderTextures)
 		{
@@ -236,6 +237,7 @@ public class HighlightingEffect : MonoBehaviour
 			this.enabled = false;
 			return;
 		}
+        */
 		
 		// Disable if required Render Texture Format is not supported
 		if (!SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGB32))
@@ -319,7 +321,7 @@ public class HighlightingEffect : MonoBehaviour
 		#if UNITY_4_0
 		if (this.enabled == false || go.activeInHierarchy == false)
 		#else
-		if (this.enabled == false || go.active == false)
+		if (this.enabled == false || go.activeSelf == false)
 		#endif
 			return;
 		
@@ -359,7 +361,7 @@ public class HighlightingEffect : MonoBehaviour
 		shaderCamera.cullingMask = layerMask;
 		shaderCamera.rect = new Rect(0f, 0f, 1f, 1f);
 		shaderCamera.renderingPath = RenderingPath.VertexLit;
-		shaderCamera.hdr = false;
+		shaderCamera.allowHDR = false;
 		shaderCamera.useOcclusionCulling = false;
 		shaderCamera.backgroundColor = new Color(0f, 0f, 0f, 0f);
 		shaderCamera.clearFlags = CameraClearFlags.SolidColor;

@@ -9,7 +9,7 @@ namespace Framework.Unity
         [RuntimeInitializeOnLoadMethod]
         static void Initialize()
         {
-            mSingleObj = new GameObject("AppStart", typeof(AppStart));
+            mSingleObj = new GameObject(typeof(AppStart).Name, typeof(AppStart));
             //mSingleObj.hideFlags = HideFlags.HideInHierarchy;
             GameObject.DontDestroyOnLoad(mSingleObj);
 

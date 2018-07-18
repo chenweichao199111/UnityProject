@@ -30,9 +30,8 @@ namespace Framework.Unity.Pattern
                         GameObject singleton = null;
                         if (_instance == null)
                         {
-                            singleton = new GameObject();
+                            singleton = new GameObject(typeof(T).Name);
                             _instance = singleton.AddComponent<T>();
-                            singleton.name = string.Format("(singleton) {0}", typeof(T));
                         }
                         else
                         {
