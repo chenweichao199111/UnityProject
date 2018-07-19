@@ -25,10 +25,5 @@ namespace Framework.Unity
             HiDebug.EnableDebuger(false);
 #endif
         }
-
-        public static void SetParent(GameObject varTarget)
-        {
-            varTarget.transform.parent = mSingleObj.transform;
-        }
     }
 }
