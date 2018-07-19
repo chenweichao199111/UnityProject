@@ -35,7 +35,7 @@ namespace Framework.Unity.Sqlite
             }
             catch (Exception e)
             {
-                Debug.Log(e.Message);
+                Debug.LogError(e.Message);
             }
         }
 

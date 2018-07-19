@@ -329,11 +329,11 @@ namespace Framework.Unity.UI
                         tempStr = string.Format("{0}{1}", tempStr, target.name);
                     }
                 }
-                Debug.Log(tempStr);
+                Debuger.Log(tempStr);
             }
             else
             {
-                Debug.Log("UI堆栈是空");
+                Debuger.Log("UI堆栈是空");
             }
             */
         }

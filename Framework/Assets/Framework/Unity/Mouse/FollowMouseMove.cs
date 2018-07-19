@@ -34,14 +34,19 @@ namespace Framework.Unity.Mouse
                 //判断射线是否成功发射且是否触发目标物体
                 if (isCollider && hitInfo.collider.CompareTag("Ground"))
                 {
-                    //参数为目标物体的位置信息
-                    ShowClickEffect(hitInfo.point);
-                    isMoving = true;
-                    LookAtTarget(hitInfo.point);
+                    TriggerRaycastHit(hitInfo);
                 }
             }
 
             MoveTo(targetPosition);
+        }
+
+        public void TriggerRaycastHit(RaycastHit varHit)
+        {
+            // 参数为目标物体的位置信息
+            ShowClickEffect(varHit.point);
+            isMoving = true;
+            LookAtTarget(varHit.point);
         }
 
         void ShowClickEffect(Vector3 hitPoint)

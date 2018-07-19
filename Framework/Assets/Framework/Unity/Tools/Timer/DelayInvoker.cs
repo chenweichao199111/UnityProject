@@ -38,7 +38,7 @@ namespace Framework.Unity.Tools
                     catch(Exception e)
                     {
                         string tempStr = string.Format("DelayInvoker Invoke() Error:{0}\n{1}", e.Message, e.StackTrace);
-                        Debug.LogError(tempStr);
+                        Debuger.LogError(tempStr);
                     }
                     
                 }
@@ -194,7 +194,7 @@ namespace Framework.Unity.Tools
             catch (Exception e)
             {
                 string tempStr = string.Format("DelayInvoker DelayInvokerOnEndOfFrame() Error:{0}\n{1}", e.Message, e.StackTrace);
-                Debug.LogError(tempStr);
+                Debuger.LogError(tempStr);
             }
         }
 

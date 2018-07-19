@@ -62,7 +62,7 @@ namespace Framework.Unity.Tools
                 catch (Exception e)
                 {
                     string tempStr = string.Format("MonoHelper Update() Error:{0}\n{1}", e.Message, e.StackTrace);
-                    Debug.LogError(tempStr);
+                    Debuger.LogError(tempStr);
                 }
             }
         }
@@ -78,7 +78,7 @@ namespace Framework.Unity.Tools
                 catch (Exception e)
                 {
                     string tempStr = string.Format("MonoHelper FixedUpdate() Error:{0}\n{1}", e.Message, e.StackTrace);
-                    Debug.LogError(tempStr);
+                    Debuger.LogError(tempStr);
                 }
             }
         }

@@ -4,15 +4,12 @@ namespace Framework.Unity
 {
     public class AppStart : MonoBehaviour
     {
-        static GameObject mSingleObj;
-
         [RuntimeInitializeOnLoadMethod]
         static void Initialize()
         {
-            mSingleObj = new GameObject(typeof(AppStart).Name, typeof(AppStart));
+            GameObject tempSingleObj = new GameObject(typeof(AppStart).Name, typeof(AppStart));
             //mSingleObj.hideFlags = HideFlags.HideInHierarchy;
-            GameObject.DontDestroyOnLoad(mSingleObj);
-
+            GameObject.DontDestroyOnLoad(tempSingleObj);
 #if UNITY_EDITOR
             // 如果使用Debuger.Log or Debuger.LogWarnning or Debuger.LogError打印日志, 你可以一键关闭这些日志Hidebug.EnableDebuger(false).
             HiDebug.EnableDebuger(true);

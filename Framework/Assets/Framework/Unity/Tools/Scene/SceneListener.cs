@@ -47,14 +47,17 @@ namespace Framework.Unity.Tools
 
         private void SceneLoaded(Scene varScene, LoadSceneMode varMode)
         {
-            Debug.LogFormat("加载完{0}场景用时{1}秒", varScene.name, Time.realtimeSinceStartup - mLoadTime);
+            string tempStr = string.Format("加载完{0}场景用时{1}秒", varScene.name, Time.realtimeSinceStartup - mLoadTime);
+            Debuger.Log(tempStr);
             mLoadTime = Time.realtimeSinceStartup;
         }
 
 
         private void SceneUnloaded(Scene varScene)
         {
-            Debug.LogFormat("卸载完{0}场景用时{1}秒", varScene.name, Time.realtimeSinceStartup - mUnLoadTime);
+            string tempStr = string.Format("卸载完{0}场景用时{1}秒", varScene.name, Time.realtimeSinceStartup - mUnLoadTime);
+            Debuger.Log(tempStr);
+
             mUnLoadTime = Time.realtimeSinceStartup;
             mLoadTime = Time.realtimeSinceStartup;
         }
@@ -62,8 +65,8 @@ namespace Framework.Unity.Tools
 
         private void ActiveSceneChange(Scene var1, Scene var2)
         {
-            Debug.Log("第一个场景是" + var1.name);
-            Debug.Log("第二个场景是" + var2.name);
+            Debuger.Log(string.Format("第一个场景是{0}", var1.name));
+            Debuger.Log(string.Format("第二个场景是{0}", var2.name));
         }
     }
 }

@@ -54,7 +54,7 @@ namespace Framework.Unity.Sqlite
 
                 if (tempStr1 != tempStr2)
                 {
-                    Debug.Log("字节不同，重新写入数据");
+                    Debuger.Log("字节不同，重新写入数据");
                     File.WriteAllBytes(appDbPath, loadDB.bytes);
                 }
                 loadDB.Dispose();

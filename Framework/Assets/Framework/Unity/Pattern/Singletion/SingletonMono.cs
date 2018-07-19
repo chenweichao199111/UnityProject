@@ -16,7 +16,7 @@ namespace Framework.Unity.Pattern
             {
                 if (applicationIsQuitting)
                 {
-                    Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
+                    Debuger.LogWarning("[Singleton] Instance '" + typeof(T) +
                         "' already destroyed on application quit." +
                         " Won't create again - returning null.");
                     return null;
