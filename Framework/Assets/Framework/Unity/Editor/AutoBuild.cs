@@ -55,40 +55,40 @@ namespace Framework.Unity.Editor
             return scenes;
         }
 
-        [MenuItem("File/AutoBuilder/Windows/32-bit")]
+        [MenuItem("Tools/AutoBuilder/Windows/32-bit")]
         static void PerformWinBuild()
         {
             EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows);
             BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/Win/" + GetProjectName() + ".exe", BuildTarget.StandaloneWindows, BuildOptions.None);
         }
 
-        [MenuItem("File/AutoBuilder/Windows/64-bit")]
+        [MenuItem("Tools/AutoBuilder/Windows/64-bit")]
         static void PerformWin64Build()
         {
             EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64);
             BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/Win64/" + GetProjectName() + ".exe", BuildTarget.StandaloneWindows64, BuildOptions.None);
         }
 
-        [MenuItem("File/AutoBuilder/Mac OSX/Universal")]
+        [MenuItem("Tools/AutoBuilder/Mac OSX/Universal")]
         static void PerformOSXUniversalBuild()
         {
             EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSXUniversal);
             BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/OSX-Universal/" + GetProjectName() + ".app", BuildTarget.StandaloneOSXUniversal, BuildOptions.None);
         }
 
-        [MenuItem("File/AutoBuilder/iOS")]
+        [MenuItem("Tools/AutoBuilder/iOS")]
         static void PerformiOSBuild()
         {
             EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.iOS, BuildTarget.iOS);
             BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/iOS", BuildTarget.iOS, BuildOptions.None);
         }
-        [MenuItem("File/AutoBuilder/Android")]
+        [MenuItem("Tools/AutoBuilder/Android")]
         static void PerformAndroidBuild()
         {
             EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.WebGL);
             BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/Android", BuildTarget.Android, BuildOptions.None);
         }
-        [MenuItem("File/AutoBuilder/Web/Standard")]
+        [MenuItem("Tools/AutoBuilder/Web/Standard")]
         static void PerformWebBuild()
         {
             EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.WebGL, BuildTarget.WebGL);

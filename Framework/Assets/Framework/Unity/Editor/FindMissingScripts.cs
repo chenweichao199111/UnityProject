@@ -5,7 +5,7 @@ namespace Framework.Unity.Editor
 {
     public class FindMissingScripts : EditorWindow
     {
-        [MenuItem("Window/FindMissingScripts")]
+        [MenuItem("Tools/Window/FindMissingScripts")]
         public static void ShowWindow()
         {
             EditorWindow.GetWindow(typeof(FindMissingScripts));

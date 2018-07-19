@@ -34,5 +34,14 @@ namespace Framework.Unity.Editor
                 Debug.LogError(e.Message);
             }
         }
+
+        [MenuItem("Tools/DB/Open excel2json.exe")]
+        public static void OpenExcel2JsonExe()
+        {
+            string tempPath = typeof(SqliteEditor).Namespace.Replace('.', '/');
+            tempPath = string.Format("{0}/{1}/.excel2json/excel2json.exe", Application.dataPath, tempPath);
+            tempPath = tempPath.Replace('/', '\\');
+            System.Diagnostics.Process.Start(tempPath);
+        }
     }
 }

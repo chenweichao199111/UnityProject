@@ -7,7 +7,7 @@ namespace Framework.Unity.Editor
     {
         static int go_count = 0, components_count = 0, missing_count = 0;
 
-        [MenuItem("Window/FindMissingScriptsRecursively")]
+        [MenuItem("Tools/Window/FindMissingScriptsRecursively")]
         public static void ShowWindow()
         {
             EditorWindow.GetWindow(typeof(FindMissingScriptsRecursively));
