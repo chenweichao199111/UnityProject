@@ -176,5 +176,12 @@ namespace ZsCLJX
                 tempA.SetFloat("Jump", 0f);
             }
         }
+
+        #region 公共方法
+        public void TriggerRaycastHit(RaycastHit varHit)
+        {
+            CatchHitObj(varHit.transform);
+        }
+        #endregion
     }
 }
