@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-[assembly: ComVisible(false)]
 namespace Framework.Pattern
 {
     /// <summary>

@@ -5,11 +5,8 @@ namespace Framework.Unity
     [System.Serializable]
     public struct Point
     {
-        [SerializeField]
         public Vector3 mPosition;
-        [SerializeField]
         public Vector3 mEulerAngles;
-        [SerializeField]
         public Vector3 mScale;
 
         public void Init(Transform varTrans)
