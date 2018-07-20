@@ -61,7 +61,11 @@ namespace Framework.Unity.Tools
             DelayInvoker.Instance.UnscaledDelayInvokeWorker(null, delay, func, args);
         }
 
-        public static void CancelInvoke(object group)
+        /// <summary>
+        /// 移除定时回调
+        /// </summary>
+        /// <param name="group"></param>
+        public static void RemoveInvoke(object group)
         {
             DelayInvoker.Instance.CancelInvokeWorker(group);
         }
