@@ -72,8 +72,8 @@ namespace Framework.Unity.Editor
         [MenuItem("Tools/AutoBuilder/Mac OSX/Universal")]
         static void PerformOSXUniversalBuild()
         {
-            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSXUniversal);
-            BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/OSX-Universal/" + GetProjectName() + ".app", BuildTarget.StandaloneOSXUniversal, BuildOptions.None);
+            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneOSX);
+            BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/OSX-Universal/" + GetProjectName() + ".app", BuildTarget.StandaloneOSX, BuildOptions.None);
         }
 
         [MenuItem("Tools/AutoBuilder/iOS")]
