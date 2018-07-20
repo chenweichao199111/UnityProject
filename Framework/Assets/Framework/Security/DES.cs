@@ -32,7 +32,7 @@ namespace Framework.Security
         /// </summary>
         /// <param name="sourceString">待加密的字符串</param>
         /// <returns>加密后的BASE64编码的字符串</returns>
-        public string DesEncrypt(string sourceString)
+        public string DESEncrypt(string sourceString)
         {
             byte[] btKey = Encoding.Default.GetBytes(_key);
             byte[] btIv = Encoding.Default.GetBytes(_iv);
@@ -62,7 +62,7 @@ namespace Framework.Security
         /// </summary>
         /// <param name="encryptedString">待解密的字符串</param>
         /// <returns>解密后的字符串</returns>
-        public string DesDecrypt(string encryptedString)
+        public string DESDecrypt(string encryptedString)
         {
             byte[] btKey = Encoding.Default.GetBytes(_key);
             byte[] btIv = Encoding.Default.GetBytes(_iv);
