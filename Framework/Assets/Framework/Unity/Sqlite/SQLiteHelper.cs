@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Framework.Unity.Sqlite
 {
-    public class SQLiteHelper
+    public class SQLiteHelper : IDisposable
     {
         /// <summary>
         /// 数据库连接定义
@@ -37,6 +37,10 @@ namespace Framework.Unity.Sqlite
             {
                 Debug.LogError(e.Message);
             }
+        }
+
+        public SQLiteHelper()
+        {
         }
 
         /// <summary>
@@ -264,6 +268,19 @@ namespace Framework.Unity.Sqlite
                 queryString += " AND " + colNames[i] + " " + operations[i] + " " + colValues[0] + " ";
             }
             return ExecuteQuery(queryString);
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                CloseConnection();
+            }
         }
     }
 }

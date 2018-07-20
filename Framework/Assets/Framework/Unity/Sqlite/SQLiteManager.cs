@@ -1,10 +1,11 @@
 ﻿using Framework.Unity.Pattern;
 using Mono.Data.Sqlite;
+using System;
 using UnityEngine;
 
 namespace Framework.Unity.Sqlite
 {
-    public class SQLiteManager : SingletonMono<SQLiteManager>
+    public class SQLiteManager : SingletonMono<SQLiteManager>, IDisposable
     {
 
         SQLiteHelper dbAccess;
@@ -15,12 +16,6 @@ namespace Framework.Unity.Sqlite
             {
                 return dbAccess != null;
             }
-        }
-
-        // Use this for initialization
-        void Start()
-        {
-            
         }
 
         public void Init()
@@ -92,7 +87,7 @@ namespace Framework.Unity.Sqlite
         {
             if (dbAccess != null)
             {
-                dbAccess.CloseConnection();
+                dbAccess.Dispose();
             }
         }
 
@@ -113,6 +108,19 @@ namespace Framework.Unity.Sqlite
                 return string.Format("{0}/Raw", Application.dataPath);
             }
             return null;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                CloseConnection();
+            }
         }
     }
 }

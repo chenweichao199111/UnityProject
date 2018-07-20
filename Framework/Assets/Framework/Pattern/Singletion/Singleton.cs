@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
+[assembly: ComVisible(false)]
 namespace Framework.Pattern
 {
     /// <summary>
     /// C#单例模式
     /// </summary>
-    public abstract class Singleton<T> where T : class,new()
+    public abstract class Singleton<T> where T : class, new()
     {
         private static T instance;
         private static object syncRoot = new Object();

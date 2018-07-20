@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Runtime.InteropServices;
+using UnityEngine;
 
 namespace Framework.Unity.Pattern
 {
     /// <summary>
     /// MonoBehaviour单例模式
     /// </summary>
+    [ComVisible(true)]
     public class SingletonMono<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T _instance;

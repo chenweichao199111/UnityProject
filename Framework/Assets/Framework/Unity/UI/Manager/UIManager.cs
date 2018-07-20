@@ -9,7 +9,7 @@ namespace Framework.Unity.UI
     /// 1.只在该类内定义一个静态的对象，该对象在外界访问，在内部构造
     /// 2.构造函数私有化
     /// </summary>
-    public class UIManager : Singleton<UIManager>
+    public sealed class UIManager : Singleton<UIManager>
     {
         public enum CanvasType
         {

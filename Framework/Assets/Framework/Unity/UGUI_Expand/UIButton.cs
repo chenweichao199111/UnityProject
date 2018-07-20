@@ -12,7 +12,7 @@ namespace Framework.Unity.UGUI_Expand
     /// UIButton
     /// </summary>
     [AddComponentMenu("UI/Extensions/UI Button")]
-    public class UIButton : Button, IPointerDownHandler, IPointerUpHandler
+    public sealed class UIButton : Button, IPointerDownHandler, IPointerUpHandler
     {
         #region Sub-Classes
         [System.Serializable]

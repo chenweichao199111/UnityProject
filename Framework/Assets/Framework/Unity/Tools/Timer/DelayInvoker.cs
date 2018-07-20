@@ -79,9 +79,11 @@ namespace Framework.Unity.Tools
                 m_lstHelper = new List<DelayHelper>();
             }
 
-            DelayHelper helper = new DelayHelper();
-            helper.group = group;
-            helper.delay = delay;
+            DelayHelper helper = new DelayHelper
+            {
+                group = group,
+                delay = delay
+            };
             helper.func += func;
             helper.args = args;
 
@@ -95,9 +97,11 @@ namespace Framework.Unity.Tools
                 m_lstUnscaledHelper = new List<DelayHelper>();
             }
 
-            DelayHelper helper = new DelayHelper();
-            helper.group = group;
-            helper.delay = delay;
+            DelayHelper helper = new DelayHelper
+            {
+                group = group,
+                delay = delay
+            };
             helper.func += func;
             helper.args = args;
 
