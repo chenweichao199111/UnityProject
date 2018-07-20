@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Demo_CaiGeZi/CaiGeZi.unity
+    guid: 9740c155d50ee0542ba78d0f0e5b66eb
