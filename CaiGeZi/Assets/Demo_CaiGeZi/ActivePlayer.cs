@@ -132,9 +132,9 @@ namespace ZsCLJX
 
                 DOTween.Sequence().AppendInterval(tempDownOneTime)
                     .Append(drg.transform.DOMoveY(tempGridPos.y - 0.1f, mDownGridTime))
-                    .Append(drg.transform.DOMoveY(tempGridPos.y, mUpGridTime)).Play().timeScale = 2f;
+                    .Append(drg.transform.DOMoveY(tempGridPos.y, mUpGridTime)).Play().timeScale = 3f;
             }
-            tempSeq.AppendCallback(StopJump).Play().timeScale = 2f;
+            tempSeq.AppendCallback(StopJump).Play().timeScale = 3f;
 
             mIsMove = true;
         }
