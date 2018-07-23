@@ -4,12 +4,14 @@ using SGF.Module;
 using SGF.Network.General.Client;
 using SGF.Unity.UI;
 using Snaker.Services.Online;
-using Snaker.GlobalData.Proto;
+using Snaker2.GlobalData.Proto;
 
 namespace Snaker.Modules.ExampleA.UI
 {
-    public class UIExampleAPage : UIPage
+    public class UIExampleAPage:UIPage
     {
+
+
         protected override void OnOpen(object arg = null)
         {
             base.OnOpen(arg);
@@ -24,7 +26,7 @@ namespace Snaker.Modules.ExampleA.UI
 
         private void OnBtnShowMsgBox()
         {
-            UIManager.Instance.OpenWindow("ExampleA/UIMsgBox", "我是一个MsgBox");
+            UIManager.Instance.OpenWindow("ExampleA/UIMsgBox","我是一个MsgBox");
         }
 
         private void OnBtnShowMsgTips()
@@ -34,7 +36,7 @@ namespace Snaker.Modules.ExampleA.UI
 
         private void OnBtnLogin()
         {
-            OnlineManager.Instance.Login(123, "cwc");
+            OnlineManager.Instance.Login(123, "slicol");
         }
 
         private void OnBtnTestRPC()

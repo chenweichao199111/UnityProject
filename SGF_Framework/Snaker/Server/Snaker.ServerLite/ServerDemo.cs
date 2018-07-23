@@ -1,9 +1,9 @@
 ﻿using SGF;
 using SGF.Network.General.Server;
-using Snaker.GlobalData.Data;
-using Snaker.GlobalData.Proto;
+using Snaker2.GlobalData.Data;
+using Snaker2.GlobalData.Proto;
 
-namespace Snaker.ServerLite
+namespace Snaker2.ServerLite
 {
     public class ServerDemo
     {

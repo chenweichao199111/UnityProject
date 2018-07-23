@@ -1,6 +1,6 @@
 ﻿using ProtoBuf;
 
-namespace Snaker.GlobalData.Proto
+namespace Snaker2.GlobalData.Proto
 {
     [ProtoContract]
     public class LoginReq

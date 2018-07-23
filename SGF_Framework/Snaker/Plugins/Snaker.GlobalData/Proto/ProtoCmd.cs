@@ -1,4 +1,4 @@
-﻿namespace Snaker.GlobalData.Proto
+﻿namespace Snaker2.GlobalData.Proto
 {
     public class ProtoCmd
     {

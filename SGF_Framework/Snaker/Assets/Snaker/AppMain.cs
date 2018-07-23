@@ -1,14 +1,14 @@
-﻿using SGF;
+﻿using System;
+using SGF;
 using SGF.Module;
 using SGF.Time;
 using SGF.Unity.UI;
 using Snaker.Services.Online;
-using System;
 using UnityEngine;
 
 namespace Snaker
 {
-    public class AppMain : MonoBehaviour
+    public class AppMain:MonoBehaviour
     {
         void Awake()
         {
@@ -122,7 +122,7 @@ namespace Snaker
                     //显示“初始化业务模块失败！”
                 }
                 */
-
+                
             }
             else
             {

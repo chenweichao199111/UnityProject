@@ -1,8 +1,8 @@
 ﻿using SGF;
 using SGF.Common;
 using SGF.Network.General.Client;
-using Snaker.GlobalData.Data;
-using Snaker.GlobalData.Proto;
+using Snaker2.GlobalData.Data;
+using Snaker2.GlobalData.Proto;
 
 namespace Snaker.Services.Online
 {
@@ -58,7 +58,7 @@ namespace Snaker.Services.Online
 
         public void TestRPC()
         {
-            m_net.Invoke("StartGameRequest", 1,"abc");
+            m_net.Invoke("StartGameRequest1", 1,"abc");
         }
 
         private void NotifyStartGame(string a, PVPStartParam param)

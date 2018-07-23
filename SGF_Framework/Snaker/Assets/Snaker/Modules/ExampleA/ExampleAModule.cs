@@ -3,7 +3,7 @@ using SGF.Extension;
 using SGF.Module;
 using SGF.Network.General.Client;
 using SGF.Unity.UI;
-using Snaker.GlobalData.Proto;
+using Snaker2.GlobalData.Proto;
 
 namespace Snaker.Modules
 {

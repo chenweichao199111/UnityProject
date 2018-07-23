@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace Snaker.ServerLite
+namespace Snaker2.ServerLite
 {
     class Program
     {
