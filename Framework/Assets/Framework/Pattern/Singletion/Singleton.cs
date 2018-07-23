@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace Framework.Pattern
 {
     /// <summary>
     /// C#单例模式
     /// </summary>
-    public abstract class Singleton<T> where T : class, new()
+    public abstract class Singleton<T> where T : Singleton<T>, new()
     {
         private static T instance;
         private static object syncRoot = new Object();
@@ -20,6 +19,7 @@ namespace Framework.Pattern
                     {
                         if (instance == null)
                             instance = new T();
+                        instance.Init();
                     }
                 }
                 return instance;
@@ -28,7 +28,7 @@ namespace Framework.Pattern
 
         protected Singleton()
         {
-            Init();
+
         }
 
         public virtual void Init() { }
