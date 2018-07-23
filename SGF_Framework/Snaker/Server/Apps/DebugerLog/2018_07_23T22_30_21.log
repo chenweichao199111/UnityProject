@@ -1,0 +1,16 @@
+[I]22:30:21.073 ================================================================================
+[I]22:30:21.202                                    SGFDebuger                                   
+[I]22:30:21.203 --------------------------------------------------------------------------------
+[I]22:30:21.203 Time:	22:30:20.744 
+[I]22:30:21.203 Path:	D:\CWC\UnityProject\SGF_Framework\Snaker\Server\Apps\/DebugerLog/
+[I]22:30:21.204 ================================================================================
+[I]22:30:21.285 > ServerDemo::Init() 
+[I]22:30:21.314 > NetManager::Init() port:4540
+[I]22:30:21.316 > Gateway::Init() port:4540
+[I]22:30:21.378 > Gateway::Start() 
+[I]22:30:22.247 > NetManager::AddListener() cmd:1, listener:ServerDemo.OnLoginReq
+[I]22:30:22.249 > RPCManagerBase::RegisterListener() ServerDemo
+[I]22:31:22.097 > ServerDemo::OnLoginReq() id:123, name:slicol
+[I]22:31:22.100 > NetManager::Send() index:1, cmd:2
+[I]22:31:22.131 > ServerDemo::OnLoginReq() id:123, name:slicol
+[I]22:31:22.132 > NetManager::Send() index:1, cmd:2

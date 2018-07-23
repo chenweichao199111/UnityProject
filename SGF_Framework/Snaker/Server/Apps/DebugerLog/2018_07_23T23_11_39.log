@@ -1,0 +1,17 @@
+[I]23:11:39.371 ================================================================================
+[I]23:11:39.376                                    SGFDebuger                                   
+[I]23:11:39.377 --------------------------------------------------------------------------------
+[I]23:11:39.377 Time:	23:11:39.370 
+[I]23:11:39.378 Path:	D:\CWC\UnityProject\SGF_Framework\Snaker\Server\Apps\/DebugerLog/
+[I]23:11:39.378 ================================================================================
+[I]23:11:39.380 > ServerDemo::Init() 
+[I]23:11:39.383 > NetManager::Init() port:4540
+[I]23:11:39.385 > Gateway::Init() port:4540
+[I]23:11:39.388 > Gateway::Start() 
+[I]23:11:39.423 > NetManager::AddListener() cmd:1, listener:ServerDemo.OnLoginReq
+[I]23:11:39.425 > RPCManagerBase::RegisterListener() ServerDemo
+[I]23:11:49.469 > ServerDemo::OnLoginReq() id:123, name:cwc
+[I]23:11:49.470 > NetManager::Send() index:1, cmd:2
+[I]23:16:26.033 > ServerDemo::OnLoginReq() id:1, name:cwc
+[I]23:16:26.038 > NetManager::Send() index:1, cmd:2
+[W]23:16:27.979 > NetManager::HandleRPCMessage() RPC不存在！
