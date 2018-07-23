@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace SGF.Unity.UI
 {
-    public class UIEventTrigger : EventTrigger
+    public class UIEventTrigger:EventTrigger
     {
         public Action onClick;
         public Action<GameObject> onClickWithObject;

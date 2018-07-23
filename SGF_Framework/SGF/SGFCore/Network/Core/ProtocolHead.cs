@@ -1,8 +1,5 @@
 ﻿namespace SGF.Network.Core
 {
-    /// <summary>
-    /// 协议头类
-    /// </summary>
     public class ProtocolHead
     {
         public const int Length = 16;

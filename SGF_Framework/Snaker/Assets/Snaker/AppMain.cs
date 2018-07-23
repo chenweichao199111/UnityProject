@@ -2,6 +2,7 @@
 using SGF.Module;
 using SGF.Time;
 using SGF.Unity.UI;
+using Snaker.Services.Online;
 using System;
 using UnityEngine;
 
@@ -54,7 +55,7 @@ namespace Snaker
             //清理UI管理器
             UIManager.Instance.Clean();
             //清理在线管理器
-
+            OnlineManager.Instance.Clean();
             //清楚IRL管理器
             //清楚版本管理器
         }
@@ -91,6 +92,7 @@ namespace Snaker
             UIManager.SceneLoading = "UISceneLoading";
 
             //初始化在线管理器
+            OnlineManager.Instance.Init();
 
             //显示登录界面
 
