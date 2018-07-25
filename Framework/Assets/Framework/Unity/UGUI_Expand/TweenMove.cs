@@ -26,7 +26,7 @@ namespace Framework.Unity.UGUI_Expand
             // 按钮移动到目标位置;
             if (mRectTrans != null)
             {
-                mRectTrans.DOAnchorPos3D(mEndPos, mDuration).onComplete = Finish;
+                mRectTrans.DOAnchorPos3D(mEndPos, mDuration).OnComplete(Finish);
             }
         }
 

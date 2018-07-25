@@ -23,7 +23,7 @@ namespace Framework.Unity.UGUI_Expand
             if (gameObject.activeSelf)
             {
                 transform.localScale = mEndScale;
-                transform.DOScale(mStartScale, mDuration).onComplete = PlayReverseFinish;
+                transform.DOScale(mStartScale, mDuration).OnComplete(PlayReverseFinish);
             }
         }
 
