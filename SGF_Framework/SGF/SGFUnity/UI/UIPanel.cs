@@ -2,10 +2,11 @@
 using SGF.Event;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace SGF.Unity.UI
 {
-    public class UIPanel:MonoBehaviour, ILogTag
+    public abstract class UIPanel:MonoBehaviour, ILogTag
     {
         public virtual UITypeDef UIType { get { return UITypeDef.Unkown; } }
 
@@ -197,6 +198,8 @@ namespace SGF.Unity.UI
                 Debuger.LogError("未找到UI控件：{0}", controlName);
             }
         }
+
+        
 
         /// <summary>
         /// 为UIPanel内的脚本提供便捷的UI事件监听接口

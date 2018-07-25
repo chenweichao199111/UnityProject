@@ -2,7 +2,7 @@
 
 namespace SGF.Unity.UI
 {
-    public class UIWidget : UIPanel
+    public abstract class UIWidget : UIPanel
     {
         public override UITypeDef UIType { get { return UITypeDef.Widget; } }
 

@@ -15,7 +15,7 @@ namespace SGF.Unity.UI
         }
     }
 
-    public class UILoading:UIPanel
+    public abstract class UILoading:UIPanel
     {
         public override UITypeDef UIType { get { return UITypeDef.Loading; } }
 

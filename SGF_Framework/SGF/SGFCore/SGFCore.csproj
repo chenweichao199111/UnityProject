@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="Codec\SGFEncoding.cs" />
     <Compile Include="Codec\MiniJSON.cs" />
     <Compile Include="Codec\PBSerializer.cs" />
@@ -87,6 +88,9 @@
     <Compile Include="Network\Core\ProtocolHead.cs" />
     <Compile Include="Network\Core\RPCLite\RPCManagerBase.cs" />
     <Compile Include="Network\Core\RPCLite\RPCMessage.cs" />
+    <Compile Include="Network\Debuger\NetDebuger.cs" />
+    <Compile Include="Network\Debuger\NetDebugFile.cs" />
+    <Compile Include="Network\Debuger\net_debuger.cs" />
     <Compile Include="Network\General\Client\IConnection.cs" />
     <Compile Include="Network\General\Client\KCPConnection.cs" />
     <Compile Include="Network\General\Client\NetManager.cs" />

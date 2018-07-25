@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
 using SGF.Common;
 using SGF.Network.Core;
@@ -36,6 +37,20 @@ namespace SGF.Network.General.Server
             Close();
         }
 
+        public void Dump()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            var dic = m_mapSession.AsDictionary();
+            foreach (var pair in dic)
+            {
+                ISession session = pair.Value;
+                sb.AppendLine("\t" + session.ToString());
+            }
+
+            Debuger.LogWarning("\nGateway Sessions ({0}):\n{1}", m_mapSession.Count, sb);
+
+        }
 
         private void Start()
         {

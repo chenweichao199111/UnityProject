@@ -2,8 +2,10 @@
 {
     public class ServerModule:ILogTag
     {
-        public ServerModuleInfo m_info;
+        private ServerModuleInfo m_info;
+
         public int id { get { return m_info.id; } }
+        public int port { get { return m_info.port; } }
 
 
         internal void Create(ServerModuleInfo info)

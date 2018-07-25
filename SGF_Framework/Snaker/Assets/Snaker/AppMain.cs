@@ -3,7 +3,9 @@ using SGF;
 using SGF.Module;
 using SGF.Time;
 using SGF.Unity.UI;
+using Snaker.GlobalUI;
 using Snaker.Services.Online;
+using Snaker.Services.Version;
 using UnityEngine;
 
 namespace Snaker
@@ -72,10 +74,20 @@ namespace Snaker
 
         private void InitVersion()
         {
-            //进行版本更新
+            //初始化版本管理器，并更新版本
+            VersionManager.Instance.Init();
+            VersionManager.onUpdateProgress += (progress) =>
+            {
+                AppLoading.Show("版本更新中...", progress);
+            };
+            VersionManager.onUpdateComplete += () =>
+            {
+                AppLoading.Hide();
 
-            //当版本更新完成后，或者版本检查完成后，初始化服务层的模块
-            InitServices();
+                //当版本更新完成后，或者版本检查完成后，初始化服务层的模块
+                InitServices();
+            };
+
         }
 
         private void InitServices()
@@ -88,48 +100,63 @@ namespace Snaker
                 ModuleDef.NativeAssemblyName));
 
             //初始化UI管理器
-            UIManager.Instance.Init("UI/");
+            UIManager.Instance.Init("ui/");
+            UIManager.MainScene = "Main";
+            UIManager.MainPage = Modules.Home.UIDef.UIHomePage;
             UIManager.SceneLoading = "UISceneLoading";
 
             //初始化在线管理器
             OnlineManager.Instance.Init();
 
             //显示登录界面
+            AppLoginPanel.Show();
 
             //如果登录成功了，初始化普通业务模块
-            GlobalEvent.onLogin += OnLogin;
+            GlobalEvent.onLoginSuccess += OnLoginSuccess;
+            GlobalEvent.onLoginFailed += OnLoginFailed;
 
-
-            //显示ExampleA
-            ModuleManager.Instance.CreateModule("ExampleAModule");
-            ModuleManager.Instance.ShowModule("ExampleAModule");
         }
 
 
-        private void OnLogin(bool success)
+        private void OnLoginSuccess()
         {
-            GlobalEvent.onLogin -= OnLogin;
+            GlobalEvent.onLoginSuccess -= OnLoginSuccess;
 
-            if (success)
-            {
-                //隐藏登录界面
+            //隐藏登录界面
+            AppLoginPanel.Hide();
 
-                //通过ILRScript来启动业务模块
-                /*
-                bool ret = ILRManager.Instance.Invoke("Snaker.ScriptMain", "Init");
-                if (ret)
-                {
-                    //显示“初始化业务模块失败！”
-                }
-                */
-                
-            }
-            else
+
+            //直接初始化业务层模块
+            ModuleManager.Instance.CreateModule(ModuleDef.HomeModule);
+            ModuleManager.Instance.CreateModule(ModuleDef.PVEModule);
+            ModuleManager.Instance.CreateModule(ModuleDef.PVPModule);
+            ModuleManager.Instance.CreateModule(ModuleDef.RoomModule);
+
+            //通过ILRScript来启动业务模块
+            /*
+            bool ret = ILRManager.Instance.Invoke("Snaker.ScriptMain", "Init");
+            if (ret)
             {
-                //显示“登录失败！”
+                //显示“初始化业务模块失败！”
             }
+            */
+
+            
+            ModuleManager.Instance.ShowModule(ModuleDef.HomeModule);
+
         }
 
+        private void OnLoginFailed(int code, string info)
+        {
+            GlobalEvent.onLoginFailed -= OnLoginFailed;
+            AppLoginPanel.Hide();
+            UIAPI.ShowMsgBox("登录失败", info, "确定", (arg) =>
+            {
+                AppLoginPanel.Show();
+            });
+
+            //显示失败信息
+        }
 
 
 

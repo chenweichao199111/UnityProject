@@ -11,10 +11,21 @@ namespace SGF.Network.Core.RPCLite
 
     }
 
-    public class RPCInvokeAttribute : Attribute
+    public class RPCRequestAttribute : Attribute
     {
 
     }
+
+    public class RPCResponseAttribute : Attribute
+    {
+
+    }
+
+    public class RPCNotifyAttribute : Attribute
+    {
+        
+    }
+
 
     public class RPCMethodHelper
     {

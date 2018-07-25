@@ -2,8 +2,8 @@
 {
     public class ServerID
     {
-        public const int Server1 = 1;
-        public const int Server2 = 2;
-        public const int Server3 = 3;
+        public const int ZoneServer = 1;
+        public const int GameServer = 2;
+        
     }
 }

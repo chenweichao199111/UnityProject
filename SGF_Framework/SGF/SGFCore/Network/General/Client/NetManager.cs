@@ -36,6 +36,16 @@ namespace SGF.Network.General.Client
                 m_conn.Clean();
                 m_conn = null;
             }
+
+            if (m_rpc != null)
+            {
+                m_rpc.Clean();
+                m_rpc = null;
+            }
+
+            m_listNtfListener.Clear();
+            m_listRspListener.Clear();
+
         }
 
         public void SetUserId(uint uid)

@@ -1,0 +1,19 @@
+[I]21:30:27.423 ================================================================================
+[I]21:30:27.628                                    SGFDebuger                                   
+[I]21:30:27.629 --------------------------------------------------------------------------------
+[I]21:30:27.629 Time:	21:30:27.422 
+[I]21:30:27.629 Path:	D:\CWC\UnityProject\SGF_Framework\Snaker\Server\Apps\/ServerLog/
+[I]21:30:27.629 ================================================================================
+[I]21:30:27.631 > Program::InitDebuger() 
+[I]21:30:28.301 > ServerManager::StartServer() 1
+[I]21:30:28.303 > ServerConfig::ReadConfig() 
+[I]21:30:28.314 > ZoneServer[1,4540]::Create() 
+[I]21:30:28.316 > ZoneServer[1,4540]::Start() 
+[I]21:30:28.316 > ServerManager::StartServer() 2
+[E]21:30:28.882 > ServerManager::StartServer() 值不能为空。
+参数名: type
+   在 SGF.Debuger.LogError(String message)
+   在 SGF.Server.ServerManager.StartServer(Int32 id)
+   在 Snaker.ServerLite.Program.Main(String[] args)
+
+[I]21:30:28.884 > MainLoop::Run() 

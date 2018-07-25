@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Text;
 using SGF.Codec;
 using SGF.Common;
 using SGF.Network.Core;
@@ -41,7 +42,29 @@ namespace SGF.Network.General.Server
                 m_rpc = null;
             }
 
+            m_listMsgListener.Clear();
+
         }
+
+
+        public void Dump()
+        {
+            m_gateway.Dump();
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var pair in m_listMsgListener)
+            {
+                ListenerHelper helper = pair.Value;
+                sb.AppendFormat("\t<cmd:{0}, msg:{1}, \tlistener:{2}.{3}>\n", pair.Key, helper.TMsg.Name,
+                    helper.onMsg.Method.DeclaringType.Name, helper.onMsg.Method.Name);
+            }
+
+            Debuger.LogWarning("\nNet Listeners ({0}):\n{1}", m_listMsgListener.Count, sb);
+
+            m_rpc.Dump();
+        }
+
 
         public void SetAuthCmd(uint cmd)
         {
@@ -179,6 +202,27 @@ namespace SGF.Network.General.Server
         }
 
 
+        public void ReturnError(params object[] args)
+        {
+            var name = "On" + m_currInvokingName + "Error";
+
+
+            RPCMessage rpcmsg = new RPCMessage();
+            rpcmsg.name = name;
+            rpcmsg.args = args;
+            byte[] buffer = PBSerializer.NSerialize(rpcmsg);
+
+            NetMessage msg = new NetMessage();
+            msg.head = new ProtocolHead();
+            msg.head.dataSize = (ushort)buffer.Length;
+            msg.content = buffer;
+
+            byte[] tmp = null;
+            int len = msg.Serialize(out tmp);
+
+            m_currInvokingSession.Send(tmp, len);
+        }
+
 
         public void Invoke(ISession session, string name, params object[] args)
         {
@@ -239,6 +283,8 @@ namespace SGF.Network.General.Server
         }
 
         private DictionarySafe<uint, ListenerHelper> m_listMsgListener = new DictionarySafe<uint, ListenerHelper>();
+
+
 
 
         private void HandlePBMessage(ISession session, NetMessage msg)

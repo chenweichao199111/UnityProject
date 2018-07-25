@@ -67,8 +67,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DebugerGUI\NetDebugerGUI.cs" />
+    <Compile Include="DebugerGUI\SGFDebugerGUI.cs" />
+    <Compile Include="DebugerGUI\SGFDebugerGUIBase.cs" />
     <Compile Include="Extension\TransformExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\SGUI\Drawing.cs" />
+    <Compile Include="UI\SGUI\DrawingSimple.cs" />
+    <Compile Include="UI\SGUI\GUICurve.cs" />
+    <Compile Include="UI\UILib\Control\CtlList.cs" />
+    <Compile Include="UI\UILib\Control\CtlListItem.cs" />
+    <Compile Include="UI\UILib\Control\CtlProgressBar.cs" />
+    <Compile Include="UI\UILib\Control\UIControl.cs" />
+    <Compile Include="UI\UILib\UIMsgBox.cs" />
+    <Compile Include="UI\UILib\UIMsgTips.cs" />
+    <Compile Include="UI\UILib\UISimpleLoading.cs" />
     <Compile Include="UI\UILoading.cs" />
     <Compile Include="UI\UIPage.cs" />
     <Compile Include="UI\UIWidget.cs" />

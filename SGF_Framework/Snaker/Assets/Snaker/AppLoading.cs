@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using SGF.Unity.UI;
+using SGF.Unity.UI.UILib.Control;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Snaker
@@ -8,7 +10,7 @@ namespace Snaker
 
         public Text txtTitle;
         public Text txtTips;
-        //public CtlProgressBar progressBar;
+        public CtlProgressBar progressBar;
 
         private static AppLoading ms_instance;
 
@@ -20,9 +22,8 @@ namespace Snaker
 
         public static void Show(string title, float progress)
         {
-            /*
             ms_instance = UIRoot.Find<AppLoading>("AppLoading");
-            */
+
 
             if (ms_instance != null)
             {
@@ -52,12 +53,12 @@ namespace Snaker
                 txtTitle.text = title + "(" + (int)(progress * 100) + "%)";
             }
 
-            /*
+
             if (progressBar != null)
             {
                 progressBar.SetData(progress);
             }
-            */
+      
 
         }
 

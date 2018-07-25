@@ -33,6 +33,9 @@
     <Reference Include="protobuf-net">
       <HintPath>..\..\..\SGF\Libs\protobuf-net.dll</HintPath>
     </Reference>
+    <Reference Include="SGFCore">
+      <HintPath>..\..\..\SGF\Libs\SGFCore.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,9 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Data\PlayerData.cs" />
     <Compile Include="Data\PVPStartParam.cs" />
+    <Compile Include="Data\RoomData.cs" />
+    <Compile Include="Data\SnakeData.cs" />
+    <Compile Include="Data\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proto\HeartBeatProto.cs" />
     <Compile Include="Proto\LoginProto.cs" />
     <Compile Include="Proto\ProtoCmd.cs" />
     <Compile Include="Server\ServerID.cs" />

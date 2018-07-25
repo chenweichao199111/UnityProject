@@ -1,0 +1,19 @@
+[I]21:55:42.320 ================================================================================
+[I]21:55:43.535                                    SGFDebuger                                   
+[I]21:55:43.535 --------------------------------------------------------------------------------
+[I]21:55:43.535 Time:	21:55:42.241 
+[I]21:55:43.536 Path:	D:\CWC\UnityProject\SGF_Framework\Snaker\Server\Apps\/ServerLog/
+[I]21:55:43.536 ================================================================================
+[I]21:55:43.852 > Program::InitDebuger() 
+[I]21:55:44.370 > ServerManager::StartServer() 1
+[I]21:55:44.372 > ServerConfig::ReadConfig() 
+[I]21:55:44.492 > ZoneServer[1,4540]::Create() 
+[I]21:55:44.506 > ZoneServer[1,4540]::Start() 
+[I]21:55:44.576 > NetManager::Init() port:4540
+[I]21:55:44.578 > Gateway::Init() port:4540
+[I]21:55:44.722 > Gateway::Start() 
+[I]21:55:49.488 > IPCConfig::ReadConfig() 
+[I]21:55:49.619 > NetManager::AddListener() cmd:1, listener:OnlineManager.OnLoginReq
+[I]21:55:49.620 > NetManager::AddListener() cmd:3, listener:OnlineManager.OnHeartBeatReq
+[I]21:55:49.621 > RPCManagerBase::RegisterListener() OnlineManager
+[I]21:55:49.623 > MainLoop::Run() 

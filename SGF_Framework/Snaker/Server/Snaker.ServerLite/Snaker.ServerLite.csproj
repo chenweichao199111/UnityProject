@@ -42,8 +42,10 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Server1\Server1.cs" />
-    <Compile Include="Server2\Server2.cs" />
+    <Compile Include="ZoneServer\Online\OnlineManager.cs" />
+    <Compile Include="ZoneServer\Room\Room.cs" />
+    <Compile Include="ZoneServer\Room\RoomManager.cs" />
+    <Compile Include="ZoneServer\ServerContext.cs" />
     <Compile Include="ZoneServer\ZoneServer.cs" />
   </ItemGroup>
   <ItemGroup>

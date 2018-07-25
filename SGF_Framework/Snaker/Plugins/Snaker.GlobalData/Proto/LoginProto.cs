@@ -1,4 +1,7 @@
 ﻿using ProtoBuf;
+using Snaker.GlobalData.Data;
+
+
 
 namespace Snaker.GlobalData.Proto
 {
@@ -6,7 +9,7 @@ namespace Snaker.GlobalData.Proto
     public class LoginReq
     {
         [ProtoMember(1)]
-        public int id;
+        public uint id;
         [ProtoMember(2)]
         public string name;
     }
@@ -14,10 +17,8 @@ namespace Snaker.GlobalData.Proto
     [ProtoContract]
     public class LoginRsp
     {
-        [ProtoMember(1)]
-        public int ret;
-        [ProtoMember(2)]
-        public string msg;
+        [ProtoMember(1)] public ReturnCode ret;
+        [ProtoMember(2)] public UserData userdata;
     }
 
 

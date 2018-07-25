@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace SGF.Unity.UI
 {
-    public class UIManager:Singleton<UIManager>
+    public class UIManager : Singleton<UIManager>
     {
         public static string MainScene = "Main";
         public static string MainPage = "UIMainPage";
@@ -16,6 +16,7 @@ namespace SGF.Unity.UI
         {
             public string name;
             public object arg;
+            public Type type;
         }
 
 
@@ -24,7 +25,7 @@ namespace SGF.Unity.UI
 
         private List<UIPanel> m_listLoadedPanel;
 
-        private Action<string> onSceneLoadedOnly; 
+        private Action<string> onSceneLoadedOnly;
 
 
         public UIManager()
@@ -43,7 +44,7 @@ namespace SGF.Unity.UI
 
             SceneManager.sceneLoaded += (scene, mode) =>
             {
-                if(onSceneLoadedOnly != null) onSceneLoadedOnly(scene.name);
+                if (onSceneLoadedOnly != null) onSceneLoadedOnly(scene.name);
             };
         }
 
@@ -73,12 +74,12 @@ namespace SGF.Unity.UI
         }
 
 
-        public T Open<T>(string name, object arg = null) where T : UIPanel
+        public T Open<T>(string name, object arg = null, Type implType = null) where T : UIPanel
         {
             T ui = UIRoot.Find<T>(name);
             if (ui == null)
             {
-                ui = Load<T>(name);
+                ui = Load<T>(name, implType);
             }
             if (ui != null)
             {
@@ -93,7 +94,7 @@ namespace SGF.Unity.UI
         }
 
 
-        private T Load<T>(string name) where T : UIPanel
+        private T Load<T>(string name, Type implType) where T : UIPanel
         {
             T ui = default(T);
             GameObject original = UIRes.LoadPrefab(name);
@@ -101,6 +102,19 @@ namespace SGF.Unity.UI
             {
                 GameObject go = GameObject.Instantiate(original);
                 ui = go.GetComponent<T>();
+                if (ui == null)
+                {
+                    try
+                    {
+                        ui = go.AddComponent(implType) as T;
+                    }
+                    catch (Exception e)
+                    {
+                        Debuger.LogError("无法自动添加抽象的UIPanel");
+                    }
+
+                }
+
                 if (ui != null)
                 {
                     go.name = name;
@@ -157,16 +171,29 @@ namespace SGF.Unity.UI
 
         //==========================================================================================
         #region Page管理
-        public void OpenPage(string page, object arg = null)
+
+        public void OpenPage<T>(string name, object arg = null) where T : UIPage
         {
-            Debuger.Log("page:{0}, arg:{1} ", page, arg);
+            Debuger.Log("name:{0}, arg:{1} ", name, arg);
 
             if (m_currentPage != null)
             {
                 m_pageTrackStack.Push(m_currentPage);
             }
-            
-            OpenPageWorker(page, arg);
+
+            OpenPageWorker(name, arg, typeof(T));
+        }
+
+        public void OpenPage(string name, object arg = null)
+        {
+            Debuger.Log("name:{0}, arg:{1} ", name, arg);
+
+            if (m_currentPage != null)
+            {
+                m_pageTrackStack.Push(m_currentPage);
+            }
+
+            OpenPageWorker(name, arg, null);
         }
 
         public void GoBackPage()
@@ -174,7 +201,7 @@ namespace SGF.Unity.UI
             if (m_pageTrackStack.Count > 0)
             {
                 var track = m_pageTrackStack.Pop();
-                OpenPageWorker(track.name, track.arg);
+                OpenPageWorker(track.name, track.arg, track.type);
             }
             else
             {
@@ -182,37 +209,44 @@ namespace SGF.Unity.UI
             }
         }
 
-        private void OpenPageWorker(string page, object arg)
+        private void OpenPageWorker(string page, object arg, Type type)
         {
             m_currentPage = new UIPageTrack();
             m_currentPage.name = page;
             m_currentPage.arg = arg;
+            m_currentPage.type = type;
 
             CloseAllLoadedPanel();
 
-            Open<UIPage>(page, arg);
+            Open<UIPage>(page, arg, type);
+        }
+
+        public void EnterMainPage<T>()
+        {
+            m_pageTrackStack.Clear();
+            OpenPageInScene(MainScene, MainPage, null, typeof(T));
         }
 
         public void EnterMainPage()
         {
             m_pageTrackStack.Clear();
-            OpenPageInScene(MainScene, MainPage, null);
+            OpenPageInScene(MainScene, MainPage, null, null);
         }
 
-        private void OpenPageInScene(string scene, string page, object arg = null)
+        private void OpenPageInScene(string scene, string page, object arg, Type type)
         {
             Debuger.Log("scene:{0}, page:{1}, arg:{2} ", scene, page, arg);
 
             string oldScene = SceneManager.GetActiveScene().name;
             if (oldScene == scene)
             {
-                OpenPageWorker(page, arg);
+                OpenPageWorker(page, arg, type);
             }
             else
             {
-                LoadScene(scene , () =>
+                LoadScene(scene, () =>
                 {
-                    OpenPageWorker(page, arg);
+                    OpenPageWorker(page, arg, type);
                 });
             }
         }
@@ -221,6 +255,13 @@ namespace SGF.Unity.UI
         //=======================================================================
 
         #region UIWindow管理
+
+        public UIWindow OpenWindow<T>(string name, object arg = null) where T : UIWindow
+        {
+            Debuger.Log(name);
+            UIWindow ui = Open<UIWindow>(name, arg, typeof(T));
+            return ui;
+        }
 
         public UIWindow OpenWindow(string name, object arg = null)
         {
@@ -241,11 +282,20 @@ namespace SGF.Unity.UI
         }
 
 
+
         #endregion
 
         //=======================================================================
 
         #region UIWidget管理
+
+        public UIWidget OpenWidget<T>(string name, object arg = null) where T : UIWidget
+        {
+            Debuger.Log(name);
+            UIWidget ui = Open<UIWidget>(name, arg, typeof(T));
+            return ui;
+        }
+
 
         public UIWidget OpenWidget(string name, object arg = null)
         {
@@ -269,6 +319,16 @@ namespace SGF.Unity.UI
 
         //==========================================================================================
         #region UILoading管理
+
+        public UILoading OpenLoading<T>(string name, object arg = null) where T : UILoading
+        {
+            Debuger.Log(name);
+            UILoading ui = Open<UILoading>(name, arg, typeof(T));
+            return ui;
+        }
+
+
+
         public UILoading OpenLoading(string name, object arg = null)
         {
             Debuger.Log(name);
@@ -285,8 +345,13 @@ namespace SGF.Unity.UI
                 ui.Close(arg);
             }
         }
+
+
         #endregion
-        
+
+        //==========================================================================================
+
+
 
     }
 }

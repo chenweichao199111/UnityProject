@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace SGF.Unity.UI
 {
-    public class UIPage:UIPanel
+    public abstract class UIPage:UIPanel
     {
         public override UITypeDef UIType { get { return UITypeDef.Page; } }
 

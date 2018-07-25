@@ -1,8 +1,9 @@
-﻿using SGF;
+﻿using System;
+using SGF;
 using SGF.Server;
 using SGF.Time;
 using Snaker.GlobalData.Server;
-using System;
+
 
 namespace Snaker.Battle
 {
@@ -11,17 +12,19 @@ namespace Snaker.Battle
         static void Main(string[] args)
         {
             InitDebuger();
-
             SGFTime.DateTimeAppStart = DateTime.Now;
 
+
             ServerManager.Instance.Init("Snaker.Battle");
-            ServerManager.Instance.StartServer(ServerID.Server3);
+            ServerManager.Instance.StartServer(ServerID.GameServer);
+            
+
             MainLoop.Run();
 
             ServerManager.Instance.StopAllServer();
         }
 
-        static void InitDebuger()
+        private static void InitDebuger()
         {
             Debuger.Init(AppDomain.CurrentDomain.BaseDirectory + "/ServerLog/");
             Debuger.EnableLog = true;

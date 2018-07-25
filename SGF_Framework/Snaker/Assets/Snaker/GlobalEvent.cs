@@ -15,10 +15,15 @@ namespace Snaker
         public static SGFEvent onFixedUpdate = new SGFEvent();
 
         /// <summary>
-        /// true:登录成功，false：登录失败，或者掉线
+        /// 登录成功
         /// </summary>
-        public static SGFEvent<bool> onLogin = new SGFEvent<bool>();
+        public static SGFEvent onLoginSuccess = new SGFEvent();
 
-        
+        /// <summary>
+        /// 登录失败
+        /// </summary>
+        public static SGFEvent<int,string> onLoginFailed = new SGFEvent<int, string>();
+
+
     }
 }
