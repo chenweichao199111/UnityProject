@@ -46,7 +46,7 @@
   <ItemGroup>
     <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libs\Common\protobuf-net.dll</HintPath>
+      <HintPath>..\Libs\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="SGFDebuger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -70,6 +70,9 @@
     <Compile Include="Extension\CollectionExtensions.cs" />
     <Compile Include="Common\DictionarySafe.cs" />
     <Compile Include="Extension\ObjectExtensions.cs" />
+    <Compile Include="IPCWork\IPCConfig.cs" />
+    <Compile Include="IPCWork\IPCManager.cs" />
+    <Compile Include="IPCWork\IPCMessage.cs" />
     <Compile Include="Math\SGFRandom.cs" />
     <Compile Include="Module\GeneralModule.cs" />
     <Compile Include="Module\IModuleActivator.cs" />
@@ -93,6 +96,10 @@
     <Compile Include="Network\General\Server\NetManager.cs" />
     <Compile Include="Network\Utils\IPUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\MainLoop.cs" />
+    <Compile Include="Server\ServerConfig.cs" />
+    <Compile Include="Server\ServerManager.cs" />
+    <Compile Include="Server\ServerModule.cs" />
     <Compile Include="Time\SGFTime.cs" />
     <Compile Include="Utils\FileUtils.cs" />
     <Compile Include="Utils\PathUtils.cs" />

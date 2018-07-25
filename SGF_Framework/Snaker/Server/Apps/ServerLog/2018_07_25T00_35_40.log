@@ -1,0 +1,17 @@
+[I]00:35:40.837 ================================================================================
+[I]00:35:40.841                                    SGFDebuger                                   
+[I]00:35:40.841 --------------------------------------------------------------------------------
+[I]00:35:40.841 Time:	00:35:40.835 
+[I]00:35:40.842 Path:	D:\CWC\UnityProject\SGF_Framework\Snaker\Server\Apps\/ServerLog/
+[I]00:35:40.842 ================================================================================
+[I]00:35:40.844 > Program::InitDebuger() 
+[I]00:35:40.853 > ServerManager::StartServer() 3
+[I]00:35:40.855 > ServerConfig::ReadConfig() 
+[I]00:35:40.868 > Server3[3,4542]::Create() 
+[I]00:35:40.869 > Server3[3,4542]::Start() 
+[I]00:35:40.873 > IPCConfig::ReadConfig() 
+[I]00:35:40.917 > RPCManagerBase::RegisterListener() Server3
+[I]00:35:40.918 > MainLoop::Run() 
+[I]00:35:43.290 > IPCManager::HandleMessage() [2]-> Func3([789, 我是参数2])
+[I]00:35:43.292 > Server3::Func3() arg1:789, arg2:我是参数2
+[W]00:35:43.294 > IPCManager::ReturnError() ->[2] OnFunc3Error(你失败了,1)

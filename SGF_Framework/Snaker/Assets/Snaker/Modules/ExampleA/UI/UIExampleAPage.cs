@@ -1,10 +1,5 @@
-﻿using System.Diagnostics;
-using SGF;
-using SGF.Module;
-using SGF.Network.General.Client;
-using SGF.Unity.UI;
+﻿using SGF.Unity.UI;
 using Snaker.Services.Online;
-using Snaker2.GlobalData.Proto;
 
 namespace Snaker.Modules.ExampleA.UI
 {

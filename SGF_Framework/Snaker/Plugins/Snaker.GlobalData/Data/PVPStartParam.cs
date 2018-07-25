@@ -1,6 +1,6 @@
 ﻿using ProtoBuf;
 
-namespace Snaker2.GlobalData.Data
+namespace Snaker.GlobalData.Data
 {
     [ProtoContract]
     public class PVPStartParam

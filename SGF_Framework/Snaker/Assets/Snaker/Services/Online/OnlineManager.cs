@@ -1,8 +1,8 @@
 ﻿using SGF;
 using SGF.Common;
 using SGF.Network.General.Client;
-using Snaker2.GlobalData.Data;
-using Snaker2.GlobalData.Proto;
+using Snaker.GlobalData.Data;
+using Snaker.GlobalData.Proto;
 
 namespace Snaker.Services.Online
 {

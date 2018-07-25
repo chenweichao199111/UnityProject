@@ -1,0 +1,5 @@
+[
+	{"id":1, "name":"Server1", "port":4540, "assembly":"Snaker.ServerLite"},
+	{"id":2, "name":"Server2", "port":4541, "assembly":"Snaker.ServerLite"},
+	{"id":3, "name":"Server3", "port":4542, "assembly":"Snaker.Battle"}
+]

@@ -73,11 +73,11 @@
     <Compile Include="Assets\Snaker\Services\Online\OnlineManager.cs" />
     <Compile Include="Assets\Snaker\UISceneLoading.cs" />
     <None Include="Assets\Document\文档.txt" />
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/CWC/UnityProject/SGF_Framework/Snaker/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/CWC/UnityProject/SGF_Framework/Snaker/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>D:/CWC/UnityProject/SGF_Framework/Snaker/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program Files/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -276,9 +276,6 @@
     </Reference>
     <Reference Include="GlobalData">
       <HintPath>D:/CWC/UnityProject/SGF_Framework/Snaker/Assets/Plugins/ManagedLib/GlobalData.dll</HintPath>
-    </Reference>
-    <Reference Include="protobuf-net">
-      <HintPath>D:/CWC/UnityProject/SGF_Framework/Snaker/Assets/Plugins/ManagedLib/protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="SGFCore">
       <HintPath>D:/CWC/UnityProject/SGF_Framework/Snaker/Assets/Plugins/ManagedLib/SGFCore.dll</HintPath>
