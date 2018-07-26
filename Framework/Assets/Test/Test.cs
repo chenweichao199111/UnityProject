@@ -1,6 +1,7 @@
 ﻿using Framework.Security;
 using UnityEngine;
 using System.IO;
+using Framework.Unity.Tools;
 
 public class Test : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Test : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Debug.Log(NetUtils.SelfIP);
         string tempText = "1234567890";
         {
             MD5 temp = new MD5();

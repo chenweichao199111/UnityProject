@@ -87,8 +87,8 @@ namespace Framework.Unity.Editor
         [MenuItem("Tools/AutoBuilder/Android")]
         static void PerformAndroidBuild()
         {
-            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.WebGL);
-            BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/Android", BuildTarget.Android, BuildOptions.None);
+            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android);
+            BuildPipeline.BuildPlayer(GetScenePaths(), "Builds/Android/" + GetProjectName() + ".apk", BuildTarget.Android, BuildOptions.None);
         }
         [MenuItem("Tools/AutoBuilder/Web/Standard")]
         static void PerformWebBuild()

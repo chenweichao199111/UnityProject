@@ -1,6 +1,8 @@
-﻿using Framework.Unity.Pattern;
+﻿using Framework.IO;
+using Framework.Unity.Pattern;
 using Mono.Data.Sqlite;
 using System;
+using System.IO;
 using UnityEngine;
 
 namespace Framework.Unity.Sqlite
