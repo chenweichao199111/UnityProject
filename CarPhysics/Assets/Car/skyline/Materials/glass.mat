@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: glass
+  m_Shader: {fileID: 33, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _2DReflection:
+        m_Texture: {fileID: 8900000, guid: 7c5975c0a0c4af54f9bac70efed1182e, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 1e1b3851b4287fe498458f8cfb47b719, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 8900000, guid: cf9e74deb7412384d88defb69a6efa5c, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Decal:
+        m_Texture: {fileID: 2800000, guid: 736d1a4990fd7a14f8101be51e859be3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DecalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Detail:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Illum:
+        m_Texture: {fileID: 2800000, guid: 95f52fa9f935e144496e3ae09b62a939, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightMap:
+        m_Texture: {fileID: 2800000, guid: 95f52fa9f935e144496e3ae09b62a939, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 586d3cee89df2fd459959b67920e14e4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SparkleTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AO: 2.4
+    - _BaseLight: 0.35
+    - _Brightness: 0.5
+    - _BumpReflectionStr: 0.5
+    - _ChromaticDispersion: 0.1
+    - _ColorAmount: 0.5
+    - _Constant: 4.643731
+    - _CubeDimness: 22.157312
+    - _Cutoff: 0.49402985
+    - _DecalColoring: 0.5
+    - _DistAmt: 50.119404
+    - _EmissionLM: 0
+    - _FresnelPower: 1.158209
+    - _LightmapDensity: 0.5
+    - _MaskStrength: 1
+    - _ReflToRefrExponent: 1
+    - _Refraction: 1
+    - _Shininess: 0.107014954
+    - _Sparkle: 0.01
+    - _SquashAmount: 1
+    m_Colors:
+    - _Color: {r: 0.16417909, g: 0.16417909, b: 0.16417909, a: 0.6}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+    - _HighlightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ReflectColor: {r: 0.47014928, g: 0.47014928, b: 0.47014928, a: 1}
+    - _Scale: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecColor: {r: 0.64179105, g: 0.64179105, b: 0.64179105, a: 0.41960785}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1002 &2100001
+EditorExtensionImpl:
+  serializedVersion: 6
