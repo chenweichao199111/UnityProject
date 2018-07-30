@@ -34,7 +34,6 @@ namespace AssetBundles
 				return "Windows";
 			case BuildTarget.StandaloneOSXIntel:
 			case BuildTarget.StandaloneOSXIntel64:
-			case BuildTarget.StandaloneOSX:
 				return "OSX";
 				// Add more build targets for your own.
 				// If you add more targets, don't forget to add the same platforms to GetPlatformForAssetBundles(RuntimePlatform) function.

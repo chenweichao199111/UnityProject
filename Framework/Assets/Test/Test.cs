@@ -9,7 +9,9 @@ public class Test : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+#if develop
         Debug.Log(NetUtils.SelfIP);
+#endif
         string tempText = "1234567890";
         {
             MD5 temp = new MD5();
@@ -57,12 +59,6 @@ public class Test : MonoBehaviour
                 Debug.Log("DES解密成功");
             }
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
 
     }
 }
