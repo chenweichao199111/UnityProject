@@ -3,7 +3,7 @@ using UnityEngine;
 using System.IO;
 using Framework.Unity.Tools;
 
-public class Test : MonoBehaviour
+public class TestJiaMi : MonoBehaviour
 {
 
     // Use this for initialization
