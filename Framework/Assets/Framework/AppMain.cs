@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Framework.Runtime;
 
 namespace Framework.Unity
 {
@@ -24,7 +25,7 @@ namespace Framework.Unity
         {
             Debuger.EnableLog = true;
             Debug.unityLogger.logEnabled = true;
-            gameObject.AddComponent<DebugShow>();
+            gameObject.AddComponent<DebuggerComponent>();
         }
 
         private void CloseLog()

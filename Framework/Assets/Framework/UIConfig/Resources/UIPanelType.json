@@ -1,12 +1,16 @@
 {
   "infoList": [
     {
-      "panelTypeString": "ZsCLJX_Dialog",
-      "path": "ZsCLJX/UI/Prefabs/Dialog"
+      "panelTypeString": "ViveCLJX_Dialog",
+      "path": "ViveCLJX/UI/Prefabs/Dialog"
     },
     {
-      "panelTypeString": "ZsCLJX_Login",
-      "path": "ZsCLJX/UI/Prefabs/Login"
+      "panelTypeString": "ViveCLJX_Login",
+      "path": "ViveCLJX/UI/Prefabs/Login"
+    },
+    {
+      "panelTypeString": "ViveCLJX_Keyboard",
+      "path": "ViveCLJX/UI/Prefabs/Keyboard"
     }
   ]
 }

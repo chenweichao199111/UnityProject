@@ -1,11 +1,12 @@
-﻿namespace Framework.UIConfig
+﻿namespace Framework.Unity.UI
 {
     /// <summary>
     /// UI面板类型，每一个UI都定义一个类型
     /// </summary>
     public class UIPanelType
     {
-        public const string ZsCLJX_Dialog = "ZsCLJX_Dialog";
-        public const string ZsCLJX_Login = "ZsCLJX_Login";
+        public const string ViveCLJX_Dialog = "ViveCLJX_Dialog";
+        public const string ViveCLJX_Login = "ViveCLJX_Login";
+        public const string ViveCLJX_Keyboard = "ViveCLJX_Keyboard";
     }
 }
