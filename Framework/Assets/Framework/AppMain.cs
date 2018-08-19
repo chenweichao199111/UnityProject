@@ -24,14 +24,12 @@ namespace Framework.Unity
         private void OpenLog()
         {
             Debuger.EnableLog = true;
-            Debug.unityLogger.logEnabled = true;
             gameObject.AddComponent<DebuggerComponent>();
         }
 
         private void CloseLog()
         {
             Debuger.EnableLog = false;
-            Debug.unityLogger.logEnabled = false;
         }
     }
 }
